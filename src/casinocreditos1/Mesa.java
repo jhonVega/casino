@@ -128,15 +128,4 @@ public class Mesa {
         }
         m.imprimir();
     }
-    /*public void repartirCartas(Carta micarta){
-   
-     Iterator<Jugador> jugadoresIterator = jugadores.iterator();                                 // usamos iterator para q me imprima todas las cartas de la lista
-     while(jugadoresIterator.hasNext()){
-     Jugador elemento = jugadoresIterator.next();
-        
-     elemento.pedirCarta(micarta);
-                
-     }
-     dealer.pedirCarta(micarta);
-     }*/
 }
