@@ -70,7 +70,7 @@ public class Jugador {
         }
 
     }
-// 7 cartas y 5 cartas, arreglos  de cartas en mesa para destaparlas 
+//metodo pensar de jugador 
     public boolean pensar(int v2) {
         boolean b = true ;
         int v = 0;
@@ -81,7 +81,7 @@ public class Jugador {
         while (cartasIterator.hasNext()) {
             Carta elemento = cartasIterator.next();
             String a = elemento.getValor();
-
+//tomamos las figuras como valor 10 y el A como 11
             if (a.matches("[A-Za-z]")) {
                 if (a.matches("A")) {
                     v = v + 11;
@@ -100,6 +100,8 @@ public class Jugador {
            int  v1=v;
             v=v-10;
         } 
+        //v2 es el valor de cartas q tiene el dealer entonces nos plantamos 
+        //si el valor de carta v del jugador es mayos a v2 o igual 21
         if ((v2<=21) && (v2 >=17 )&&(v>v2)|| (v2==21)){
             b=false;
             

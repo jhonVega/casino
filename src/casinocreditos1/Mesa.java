@@ -76,11 +76,14 @@ public class Mesa {
     }
 
     public void penJugador(Dealer d, int v2) {
+        //toma como ingreso el dealer y el valor de sus cartas
         for (Jugador jugador : jugadores) {
+            //si x es igual a true se repite el bucle
             boolean x = jugador.pensar(v2);
             while (x == true) {
                 Carta micarta5 = d.sacarCarta(true);
                 jugador.pedirCarta(micarta5);
+                //le mandamos el valor de las cartas del dealer al metodo pensar del jugador
                 x = jugador.pensar(v2);
             }
         }
@@ -96,6 +99,7 @@ public class Mesa {
         Carta micarta1 = d.sacarCarta(true);
         d.pedirCarta(micarta1);
         int v2 = 0;
+        //calculamos el valor de las dos  cartas del dealer 
         List<Carta> car = d.getCartas();
         for (Carta cart : car) {
             String a = cart.getValor();
@@ -110,6 +114,8 @@ public class Mesa {
             }
         }
         for (int i = 0; i < v; i++) {
+            //creamos los jugadores y los sentamos en la mesa 
+            //y le repartimos dos cartas al comienzo 
             Jugador j = new Jugador("jugador" + i, 300);
             Carta micarta2 = d.sacarCarta(false);
             j.pedirCarta(micarta1);
@@ -117,15 +123,17 @@ public class Mesa {
             j.pedirCarta(micarta2);
             m.jugadorNew(j);
         }
+        //usamos el metodo pensar del jugador para ver si pide mas cartas o se planta 
         m.penJugador(d, v2);
         boolean xd = d.pensar();
 
         while (xd == false) {
-
+        //usamos ahora el metodo persar del dealer 
             Carta micarta6 = d.sacarCarta(true);
             d.pedirCarta(micarta6);
             xd = d.pensar();
         }
         m.imprimir();
     }
+ 
 }

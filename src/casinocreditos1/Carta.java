@@ -31,7 +31,7 @@ public class Carta {
     }
     
     public Carta(int j, int i) {                                                    
-
+// le damos los valores y figuras  a las cartas 
         String valor1[] = {"A", "2", "3", "4", "5", "6", "7",
             "8", "9", "10", "J", "Q", "k"};
         String figura1[] = {"♥", "♣", "♠", "♦"};                                      

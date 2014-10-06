@@ -41,6 +41,7 @@ public class Dealer {
     }
     
     public void revolver(int nBarajadas) {
+        //utiliza el metodo de bajajar de la clase baraja
         baraja.barajar(nBarajadas);
     }
      public Carta sacarCarta(boolean v) {
@@ -55,14 +56,17 @@ public class Dealer {
          this.cartas.add(micarta);
     }
      public boolean  pensar(){
+         //en ete metodo retorna boolean 
          boolean b=false;
+         //contate del valor de las cartas
          int  v = 0;
+         //as = cantidad de A q tiene
          int as=0;
          Iterator<Carta> cartasIterator = cartas.iterator();                                 // usamos iterator para q me imprima todas las cartas de la lista
 while(cartasIterator.hasNext()){
 	Carta elemento = cartasIterator.next();
              String a = elemento.getValor();
-       
+       // toma todas las figuras como 10 y el A como 11 
 	if(a.matches("[A-Za-z]")){
             if(a.matches("A")){
             v=v+11;
@@ -78,6 +82,7 @@ while(cartasIterator.hasNext()){
             v = v+ Integer.parseInt(elemento.getValor());
         }       
 }
+//toma el A como 1 si se paso de 21
      if ((v >21 )&&(as>=1) ) {
             as=as-1;
            int  v1=v;
@@ -98,7 +103,8 @@ while(cartasIterator.hasNext()){
       public void imprimir() {                                                         //me imprime la baraja
 
 Iterator<Carta> cartasIterator = cartas.iterator();  
-System.out.print("Dealer \n");// usamos iterator para q me imprima todas las cartas de la lista
+System.out.print("Dealer \n");
+// usamos iterator para q me imprima todas las cartas de la lista
 while(cartasIterator.hasNext()){
 	Carta elemento = cartasIterator.next();
           if(elemento.gettapDes()==true){
