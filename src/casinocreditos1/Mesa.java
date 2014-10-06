@@ -54,9 +54,9 @@ public class Mesa {
     }
 
     public void imprimir() {
-//me imprime la baraja
+   //me imprime la baraja
         Iterator<Jugador> jugadoresIterator = jugadores.iterator();
-// usamos iterator para q me imprima todas las cartas de la lista
+        // usamos iterator para q me imprima todas las cartas de la lista
         dealer.imprimir();
         while (jugadoresIterator.hasNext()) {
             Jugador elemento = jugadoresIterator.next();
@@ -67,7 +67,8 @@ public class Mesa {
 
     public void desCart() {
         cartas = dealer.getCartas();
-        Iterator<Carta> cartasIterator = cartas.iterator();                                 // usamos iterator para q me imprima todas las cartas de la lista
+        Iterator<Carta> cartasIterator = cartas.iterator();
+        // usamos iterator para q me imprima todas las cartas de la lista
         while (cartasIterator.hasNext()) {
             Carta elemento = cartasIterator.next();
             elemento.setTapDes(false);
@@ -128,12 +129,12 @@ public class Mesa {
         boolean xd = d.pensar();
 
         while (xd == false) {
-        //usamos ahora el metodo persar del dealer 
+            //usamos ahora el metodo persar del dealer 
             Carta micarta6 = d.sacarCarta(true);
             d.pedirCarta(micarta6);
             xd = d.pensar();
         }
         m.imprimir();
     }
- 
+
 }

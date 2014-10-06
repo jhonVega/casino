@@ -20,19 +20,20 @@ public class Baraja {                                                           
     private List<Carta> baraja;
 
     public Baraja() {
-//me crea las 52 carta en una lista
+        //me crea las 52 carta en una lista
         baraja = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 13; j++) {
+                //adiciona las cartas nuevas
                 baraja.add(new Carta(j, i));
-//adiciona las cartas nuevas
             }
         }
     }
 
     public void imprimir() {
-//me imprime la baraja
-        Iterator<Carta> barajaIterator = baraja.iterator();                                 // usamos iterator para q me imprima todas las cartas de la lista
+        //imprime la baraja
+        Iterator<Carta> barajaIterator = baraja.iterator();
+        // usamos iterator para q me imprima todas las cartas de la lista
         while (barajaIterator.hasNext()) {
             Carta elemento = barajaIterator.next();
             System.out.print(elemento.getValor() + " de " + elemento.getFigura() + "\n");
@@ -41,22 +42,22 @@ public class Baraja {                                                           
     }
 
     public void barajar(int nBarajadas) {
-//barajamos el paquete de carta
+        //barajamos el paquete de carta
         for (int i = 0; i < nBarajadas; i++) {
             List<Carta> estadoActual = this.baraja;
             List<Carta> nuevoEstado = new ArrayList<>();
-//creamos dos listas nuevas para barajar
+            //creamos dos listas nuevas para barajar
             while (estadoActual.size() > 0) {
                 int longi = estadoActual.size();
                 Random ran = new Random();
-//hace numeros aleatorios segun la loguito de la lista
+                //hace numeros aleatorios segun la loguito de la lista
                 int ran1 = ran.nextInt(longi);
                 Carta n = estadoActual.get(ran1);
                 estadoActual.remove(n);
                 nuevoEstado.add(n);
             }
             this.baraja = nuevoEstado;
-//a baraja le damos el estadonuevo de la baraja
+            //a baraja le damos el estadonuevo de la baraja
         }
     }
 
